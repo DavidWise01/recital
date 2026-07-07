@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RECITAL · did your marker cross by human memory · ROOT0</title>
+<meta name="description" content="recital by David Lee Wise / ROOT0: a membership-detection harness for the human-memory membrane. Every sibling watches a machine or a channel; this one watches a person remembering — your marker seen, carried out in someone's head, and later recited. The marker is a memorable passphrase and the match is fuzzy, because memory is lossy: only a near-exact recall by someone who had access certifies; a partial is gated as reconstructive, a no-access recall came another way. A lead, never proof. Self-testable live.">
+<meta name="theme-color" content="#4f4a9c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RECITAL · did your marker cross by human memory">
+<meta property="og:description" content="The oldest covert channel: a person remembering. Your marker as a memorable passphrase, recited from memory. Fuzzy match; only a near-exact recall with access certifies. A lead, never proof of memorised-vs-copied. Verify live.">
+<meta property="og:url" content="https://davidwise01.github.io/recital/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RECITAL · did your marker cross by human memory">
+<meta name="twitter:description" content="The human-memory membrane detector. A memorable passphrase, recited from memory; fuzzy match, high bar. A lead, never proof. Verify live.">
+<link rel="canonical" href="https://davidwise01.github.io/recital/">
+<style>
+:root{
+  --paper:#e9e8f0; --pan:#f3f2f9; --pan2:#e8e6f2;
+  --ink:#22202e; --ink2:#443f57; --dim:#7d7791;
+  --indigo:#4f4a9c; --indigo2:#363073;
+  --canary:#c99128; --canary2:#9a6d18;
+  --signal:#bf4638; --signal2:#8f3025;
+  --line:#d5d2e4; --line2:#e2e0ee;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --mono:ui-monospace,"SFMono-Regular","Cascadia Code","Consolas",monospace;
+  --shadow:0 1px 0 #fffc, 0 16px 34px -24px #221f3344;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  background-image:repeating-linear-gradient(0deg,#0000 0 33px,#4f4a9c0d 33px 34px)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+a{color:var(--indigo2);text-underline-offset:2px}
+h1,h2,h3{line-height:1.13;font-weight:600;letter-spacing:.2px}
+.mono{font-family:var(--mono)}
+
+header.top{padding:38px 0 12px}
+.sealrow{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.seal{width:112px;height:112px;flex:none;filter:drop-shadow(0 8px 18px -10px #221f3355)}
+.kick{font-family:var(--mono);font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--indigo2)}
+h1.mh{font-size:clamp(31px,6.2vw,54px);margin:.08em 0 .12em;letter-spacing:.6px}
+.lede{font-size:18px;color:var(--ink2);max-width:64ch;margin:.35em 0 0}
+.lede b{color:var(--ink);font-weight:600}
+
+.asym{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0 2px}
+.asym .a{flex:1 1 260px;border:1px solid var(--line);border-radius:12px;background:var(--pan);box-shadow:var(--shadow);padding:13px 16px}
+.asym .a .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.asym .a.pos .t{color:var(--indigo)} .asym .a.neg .t{color:var(--signal2)}
+.asym .a p{margin:.35em 0 0;font-size:14px;color:var(--ink2)}
+.asym .a p b{color:var(--ink)}
+
+.flow{display:flex;align-items:stretch;gap:0;flex-wrap:wrap;margin:22px 0 4px;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:var(--shadow);background:var(--pan)}
+.fstep{flex:1 1 150px;padding:14px 15px;border-right:1px solid var(--line2);position:relative;min-width:150px}
+.fstep:last-child{border-right:0}
+.fstep .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--indigo)}
+.fstep .n{font-size:15.5px;font-weight:600;margin:3px 0 3px}
+.fstep .d{font-size:12.5px;color:var(--ink2)}
+.fstep .ar{position:absolute;right:-8px;top:50%;transform:translateY(-50%);color:var(--canary);font-size:16px;z-index:2;background:var(--pan);padding:2px 0}
+@media(max-width:720px){.fstep .ar{display:none}}
+
+section{padding:34px 0 4px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--canary2)}
+h2.sec{font-size:clamp(23px,4vw,31px);margin:.14em 0 .18em}
+.sub{color:var(--ink2);max-width:70ch;margin:0 0 18px}
+
+.ctrls{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.ctrl{border:1px solid var(--line);border-radius:12px;background:var(--pan);box-shadow:var(--shadow);padding:14px 15px;position:relative;overflow:hidden}
+.ctrl:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--cc)}
+.ctrl .cn{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--cc);line-height:1}
+.ctrl h3{font-size:14px;margin:8px 0 4px}
+.ctrl p{font-size:12.4px;color:var(--ink2);margin:0}
+@media(max-width:820px){.ctrls{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.ctrls{grid-template-columns:1fr}}
+
+.op{border:1px solid var(--line);border-radius:15px;background:var(--pan);box-shadow:var(--shadow);overflow:hidden}
+.op .otop{display:flex;align-items:center;gap:10px;padding:11px 16px;background:linear-gradient(180deg,#fff8,#fff0);border-bottom:1px solid var(--line2);font-family:var(--mono);font-size:12px;color:var(--ink2);flex-wrap:wrap}
+.op .otop b{color:var(--indigo2)}
+.opgrid{display:grid;grid-template-columns:1.05fr .95fr;gap:0}
+.opcell{padding:16px 17px;border-right:1px solid var(--line2)}
+.opcell:last-child{border-right:0}
+.opcell h4{margin:0 0 9px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.reg{font-family:var(--mono);font-size:11.5px;background:#fcfbfe;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.reg .rh{display:grid;grid-template-columns:1fr auto;gap:8px;padding:6px 10px;background:var(--pan2);border-bottom:1px solid var(--line2);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim)}
+.reg .row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:7px 10px;border-bottom:1px dashed var(--line);align-items:center}
+.reg .row:last-child{border-bottom:0}
+.reg .v{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reg .v .ph{color:var(--ink)}
+.tag{display:inline-block;border-radius:20px;padding:1px 8px;font-size:10px;font-weight:700;white-space:nowrap}
+.tag.shown{background:color-mix(in srgb,var(--indigo) 15%,#fff);color:var(--indigo2)}
+.tag.held{background:color-mix(in srgb,var(--signal) 14%,#fff);color:var(--signal2)}
+.tier{display:inline-block;border-radius:20px;padding:1px 8px;font-size:10px;font-weight:700}
+.tier.recall{background:var(--indigo);color:#fff}
+.tier.fuzzy{background:#e7dfc7;color:var(--canary2)}
+.tier.no_access{background:#e7dfc7;color:var(--dim)}
+.tier.control{background:var(--signal);color:#fff}
+.tier.none{background:#e6e4f0;color:var(--dim)}
+.corr{font-family:var(--mono);font-size:10px;color:var(--indigo2)}
+
+.relays{font-family:var(--mono);font-size:11px;background:#fcfbfe;border:1px solid var(--line);border-radius:9px;padding:8px;margin-top:10px;max-height:120px;overflow:auto}
+.relays .le{padding:4px 6px;border-bottom:1px dashed var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.relays .le:last-child{border-bottom:0}
+.relays .le b{color:var(--indigo2)} .relays .le .pt{color:var(--dim)}
+
+.panelctl{margin:2px 0 10px}
+.togg{display:flex;gap:9px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13px;cursor:pointer}
+.togg input{margin-top:3px;flex:none;accent-color:var(--indigo)}
+.togg .lab b{font-family:var(--mono);font-size:12px} .togg .lab .why{color:var(--ink2);font-size:12.3px}
+.runrow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0 4px}
+.btn{font-family:var(--mono);font-size:12.5px;border:1px solid var(--indigo);background:color-mix(in srgb,var(--indigo) 12%,#fff);color:var(--indigo2);border-radius:8px;padding:9px 15px;cursor:pointer;font-weight:600}
+.btn:hover{background:color-mix(in srgb,var(--indigo) 22%,#fff)}
+.verdict{font-family:var(--mono);font-size:13px;line-height:1.5;border-radius:9px;padding:11px 13px;margin-top:10px;border:1px solid var(--line)}
+.verdict.clean{background:color-mix(in srgb,var(--indigo) 9%,#fff);border-color:color-mix(in srgb,var(--indigo) 35%,#fff);color:var(--indigo2)}
+.verdict.invalid{background:color-mix(in srgb,var(--signal) 8%,#fff);border-color:color-mix(in srgb,var(--signal) 32%,#fff);color:var(--signal2)}
+.verdict .vh{font-weight:700;letter-spacing:.05em}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin-top:11px;font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.stat b{color:var(--ink);font-weight:600}
+.opnote{padding:11px 17px;font-family:var(--mono);font-size:11px;color:var(--dim);background:var(--pan2);line-height:1.6;border-top:1px solid var(--line2)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--pan);padding:16px 18px;box-shadow:var(--shadow)}
+.card h3{font-size:14px;font-family:var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--indigo2);margin:0 0 8px}
+.card.sig h3{color:var(--signal2)}
+.card p{margin:.35em 0;font-size:14.5px;color:var(--ink2)}
+.card ul{margin:.3em 0;padding-left:1.1em;font-size:13.8px;color:var(--ink2)}
+.card code{font-family:var(--mono);font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.src{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:14px;line-height:1.75}
+.backbar{margin:30px 0 0;padding:15px 0;border-top:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px}
+.backbar a{text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:7px 12px;background:var(--pan)}
+.backbar a:hover{border-color:var(--indigo)}
+footer{padding:26px 0 60px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--dim)}
+@media(max-width:760px){.opgrid,.two{grid-template-columns:1fr}.opcell{border-right:0;border-bottom:1px solid var(--line2)}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap">
+  <div class="sealrow">
+    <svg class="seal" viewBox="0 0 120 120" role="img" aria-label="Recital insignia">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#4f4a9c" stroke-width="2.4"/>
+      <!-- a head in profile, a marker held inside, spoken out -->
+      <path d="M46 84 C 32 80, 30 46, 54 40 C 74 36, 82 52, 76 62 L82 66 L74 70 C 74 80, 66 84, 60 84 Z" fill="none" stroke="#4f4a9c" stroke-width="1.8"/>
+      <circle cx="56" cy="58" r="5" fill="#c99128"/>
+      <circle cx="56" cy="58" r="5" fill="none" stroke="#8f3025" stroke-width="1.1"/>
+      <g stroke="#4f4a9c" stroke-width="1.2" opacity=".6"><path d="M84 56 q7 4 0 8" fill="none"/><path d="M89 52 q11 8 0 16" fill="none"/></g>
+      <text x="60" y="112" text-anchor="middle" font-family="ui-monospace,monospace" font-size="7" fill="#443f57" letter-spacing="1.5">CARRIED IN THE HEAD</text>
+    </svg>
+    <div>
+      <div class="kick">the human-memory membrane</div>
+      <h1 class="mh">RECITAL</h1>
+      <p class="lede">Did your marker cross by <b>human memory</b>. Every sibling watches a machine or a channel; this one watches the oldest covert channel there is: <b>a person remembering</b>. Your marker seen by someone, carried out of the building in their head, and later <b>recited</b> — no digital trail at all.</p>
+    </div>
+  </div>
+
+  <div class="asym">
+    <div class="a pos">
+      <div class="t">▲ a near-exact recall</div>
+      <p>A passphrase only <b>you</b> showed, recited <b>near-exactly</b> by someone who <b>had access</b>, after you showed it — carried by more than one person, with a held-out arm proving the harness isn't fabricating. It crossed through a mind.</p>
+    </div>
+    <div class="a neg">
+      <div class="t">▽ memory is lossy</div>
+      <p>A partial recall could be reconstruction or coincidence; silence means <b>almost nothing</b>. Even a certified recall is a <b>lead</b> — you can't prove it was memorised rather than written down.</p>
+    </div>
+  </div>
+
+  <div class="flow">
+    <div class="fstep"><div class="t">detection</div><div class="n">the passphrase</div><div class="d">memorable words, real entropy</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">anchoring</div><div class="n">shown to whom</div><div class="d">who had access, and when</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">comparison</div><div class="n">the recitation</div><div class="d">fuzzy match · memory is lossy</div><span class="ar">→</span></div>
+    <div class="fstep"><div class="t">witness</div><div class="n">the gates</div><div class="d">held-out · fidelity · access · corroboration</div></div>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<section id="controls">
+  <div class="eyebrow">The instrument</div>
+  <h2 class="sec">Fuzzy, because memory is</h2>
+  <p class="sub">You can't demand a verbatim 128-bit blob from a person, so the marker is a memorable passphrase and the match is fuzzy. That forces the bar high: only a near-exact recall, by someone who had access, after you showed it, is a memory crossing. Everything else is a control against reading a recall that isn't there.</p>
+  <div class="ctrls">
+    <div class="ctrl" style="--cc:var(--signal)">
+      <div class="cn">1</div><h3>Held-out arm</h3>
+      <p>Passphrases shown to <b>no one</b>. If one is recited near-exact, it reached them another way — <b>INVALID</b>.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--indigo)">
+      <div class="cn">2</div><h3>Fidelity gate</h3>
+      <p>Only a <b>near-exact</b> recall (≥ 0.9) counts. A partial is FUZZY — reconstruction or coincidence, gated.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--indigo)">
+      <div class="cn">3</div><h3>Access gate</h3>
+      <p>The reciter must have <b>had access</b>. Near-exact by someone who never saw it came another way — gated.</p>
+    </div>
+    <div class="ctrl" style="--cc:var(--canary)">
+      <div class="cn">4</div><h3>Corroboration ≠ proof</h3>
+      <p>Strength = how many <b>independent people</b> carried it. Never proof it was memorised vs written down.</p>
+    </div>
+  </div>
+</section>
+
+<section id="selftest">
+  <div class="eyebrow">Verify first</div>
+  <h2 class="sec">The control arm, live</h2>
+  <p class="sub">This is the harness's own logic — <code>recitation.py</code> + <code>score.py</code> — running in your browser: the same Jaccard fidelity, the same held-out arm, the same fidelity and access gates. Fresh passphrases each round; flip the failure modes and watch a recall gate out. Nothing leaves this page.</p>
+  <div class="op">
+    <div class="otop">◎ HARNESS · <b>match + score</b>, ported faithfully — the real controls, client-side (no network)</div>
+    <div class="opgrid">
+      <div class="opcell">
+        <h4>the registry &amp; the recitations</h4>
+        <div class="reg" id="reg"></div>
+        <div class="relays" id="relays"></div>
+      </div>
+      <div class="opcell">
+        <h4>the panel · run &amp; score</h4>
+        <div class="panelctl" id="toggles">
+          <label class="togg"><input type="checkbox" id="tPartial"><span class="lab"><b>passphrase #1 is recited PARTIALLY</b><br><span class="why">a word dropped — reconstructive memory, gated as FUZZY not certified</span></span></label>
+          <label class="togg"><input type="checkbox" id="tNoAccess"><span class="lab"><b>passphrase #1's reciters had NO access</b><br><span class="why">near-exact but they never saw it — it reached them another way</span></span></label>
+          <label class="togg"><input type="checkbox" id="tFab"><span class="lab"><b>someone recites a NEVER-SHOWN passphrase</b><br><span class="why">a held-out marker recited — the control must void the run</span></span></label>
+        </div>
+        <div class="runrow"><button class="btn" id="run">▸ run panel</button><button class="btn" id="regen" style="border-color:var(--line);background:var(--pan);color:var(--ink2)">↻ new passphrases</button></div>
+        <div class="verdict" id="verdict"></div>
+        <div class="stat" id="stat"></div>
+      </div>
+    </div>
+    <div class="opnote">Faithful to <span class="mono">score.py</span>: fidelity = Jaccard word-overlap; a RECALL needs fidelity ≥ 0.9, <span class="mono">had_access</span>, recited after shown; a partial is FUZZY, a no-access near-exact is NO_ACCESS, both gated; a held-out passphrase recited near-exact spikes FPR and the run is <span class="mono">INVALID</span>. Corroboration = distinct reciters.</div>
+  </div>
+</section>
+
+<section id="scope">
+  <div class="eyebrow">The honest scope</div>
+  <h2 class="sec">What a certified recall does — and does not — mean</h2>
+  <div class="two">
+    <div class="card">
+      <h3>What it does mean</h3>
+      <p>A passphrase only you showed, recited <b>near-exactly</b> by someone who <b>had access</b>, <b>after</b> you showed it, with a held-out arm proving the harness isn't fabricating.</p>
+      <p>It crossed via a person's <b>memory</b> — carried out with no digital trail.</p>
+    </div>
+    <div class="card sig">
+      <h3>What it does not mean</h3>
+      <p>It does <b>not</b> prove it was truly memorised (vs written down or photographed), name anyone's intent, or prove theft.</p>
+      <p>A corroborated <b>lead</b> — and a <b>negative</b> means little.</p>
+    </div>
+  </div>
+</section>
+
+<section id="honesty">
+  <div class="eyebrow">The colophon</div>
+  <h2 class="sec">Sound — and the limits it names out loud</h2>
+  <div class="two">
+    <div class="card">
+      <h3>Sound</h3>
+      <ul>
+        <li><code>python selftest.py</code> proves — no network — that a near-exact recall with access is certified and corroborated; a held-out passphrase recited spikes FPR and the run is <b>refused</b>; a partial recitation is FUZZY-gated; a no-access near-exact is gated; a pre-show recitation isn't certified; a run with no arm is refused; an unrelated phrase falls below the floor.</li>
+        <li>The <b>fidelity gate</b> is the honest move: it refuses to read reconstructive memory as a crossing.</li>
+        <li>The self-test above is that exact logic — client-side.</li>
+      </ul>
+    </div>
+    <div class="card sig">
+      <h3>Limits (and it says so)</h3>
+      <ul>
+        <li><b>Memorised vs copied is unprovable</b> — a recall is a human-carried crossing, not proof of mechanism.</li>
+        <li><b>Entropy is bounded by memorability</b> — use a large wordlist; a memorable phrase carries less than a hex canary.</li>
+        <li><b>One membrane only.</b> See the map for the others.</li>
+        <li><b>A lead, not an accusation.</b> It names no one's intent.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="src">
+    SOURCE · the runnable kit — <a href="https://github.com/DavidWise01/recital">github.com/DavidWise01/recital</a> · <code>canary.py</code> (memorable passphrases) · <code>recitation.py</code> (fuzzy Jaccard match) · <code>score.py</code> (held-out + fidelity gate + access gate + corroboration) · <code>harness.py</code> · <code>selftest.py</code> (no network). Closure-Loop layered: Detection → Anchoring → Comparison → Witness → Lineage.
+  </div>
+  <div class="backbar">
+    <a href="https://github.com/DavidWise01/recital">⧉ the code (GitHub)</a>
+    <a href="https://davidwise01.github.io/membrane-map/">⊞ the membrane map</a>
+    <a href="https://davidwise01.github.io/telltale/">◠ telltale · side-channel</a>
+    <a href="https://davidwise01.github.io/hearsay/">&#8220;&#8221; hearsay · relay</a>
+    <a href="https://davidwise01.github.io/ud0/">⌂ ud0 · the atlas</a>
+  </div>
+</section>
+
+<footer>
+  RECITAL · the human-memory membrane detector · David Lee Wise / ROOT0 / TriPod LLC · CC-BY-ND-4.0<br>
+  a near-exact recall is the crossing · memory is lossy · a lead, never proof
+</footer>
+</main>
+
+<script>
+(function(){
+"use strict";
+var WORDS=["amber","basalt","cinder","dahlia","ember","fathom","gossamer","harrow","indigo","juniper","kestrel","lattice","marrow","nimbus","obsidian","petrichor","quartz","reliquary","sable","thistle","umbra","vellum","willow","xylem","yarrow","zephyr","anvil","brindle","cobalt","dusk","eddy","fennel","granite","hollow","ivory","jasper","kiln","lichen","mica","nettle","onyx","plume","quill","rime","solstice","tallow","ulna","verdigris","wick","yonder","zenith","alder","birch","cedar","damson","elm","furrow","gorse","heather","ironwood","juneberry","knoll","larch","moor"];
+var PHRASE=5, HIGH=0.9, FLOOR=0.4, SHOWN="2026-01-01T00:00:00Z";
+function newPhrase(){ // sample WITHOUT replacement -> distinct words (well-behaved Jaccard)
+  var pool=WORDS.slice(), a=new Uint32Array(PHRASE), w=[];
+  crypto.getRandomValues(a);
+  for(var i=0;i<PHRASE;i++){ var j=a[i]%pool.length; w.push(pool[j]); pool.splice(j,1); }
+  return w.join(" ");
+}
+function normalize(t){ var m=(t.toLowerCase().match(/[a-z0-9]+/g)||[]); return Array.from(new Set(m)); }
+function jaccard(a,b){ var A=normalize(a),B=normalize(b); if(!A.length||!B.length) return 0;
+  var sA=new Set(A), inter=0; B.forEach(function(x){ if(sA.has(x)) inter++; });
+  var uni=new Set(A.concat(B)).size; return inter/uni; }
+function dropOne(p){ var w=p.split(" "); w.pop(); return w.join(" "); }
+function before(a,b){ if(!a||!b) return false; return a.slice(0,19)<b.slice(0,19); }
+
+var REG=[], RECS=[], lastScore=null;
+function build(){
+  REG=[
+    {value:newPhrase(), held_out:false, shown_utc:SHOWN, label:"phrase #1"},
+    {value:newPhrase(), held_out:false, shown_utc:SHOWN, label:"phrase #2"},
+    {value:newPhrase(), held_out:false, shown_utc:SHOWN, label:"phrase #3"},
+    {value:newPhrase(), held_out:true,  shown_utc:null,  label:"held-out A"},
+    {value:newPhrase(), held_out:true,  shown_utc:null,  label:"held-out B"}
+  ];
+}
+function buildRecs(){
+  var partial=document.getElementById("tPartial").checked;
+  var noAccess=document.getElementById("tNoAccess").checked;
+  var fab=document.getElementById("tFab").checked;
+  var p0text = partial ? dropOne(REG[0].value) : REG[0].value;
+  var acc0 = !noAccess;
+  RECS=[
+    {text:p0text, reciter:"Ana", had_access:acc0, recited_utc:"2026-03-01T00:00:00Z"},
+    {text:p0text, reciter:"Ben", had_access:acc0, recited_utc:"2026-03-02T00:00:00Z"},
+    {text:REG[1].value, reciter:"Cy", had_access:true, recited_utc:"2026-03-01T00:00:00Z"},
+    {text:REG[2].value, reciter:"Del", had_access:true, recited_utc:"2026-03-05T00:00:00Z"}
+  ];
+  if(fab) RECS.push({text:REG[3].value, reciter:"leak", had_access:true, recited_utc:"2026-03-01T00:00:00Z"});
+}
+function bestMatch(text){ var best=[null,0]; REG.forEach(function(e){ var f=jaccard(text,e.value); if(f>best[1]) best=[e.value,f]; }); return best; }
+function tier(d){
+  if(d.fidelity<FLOOR) return "none";
+  if(d.held_out) return d.fidelity>=HIGH?"control":"none";
+  if(before(d.recited_utc,d.shown_utc)) return "none";
+  if(d.fidelity<HIGH) return "fuzzy";
+  if(!d.had_access) return "no_access";
+  return "recall";
+}
+function collect(){
+  var det=[];
+  RECS.forEach(function(r,ri){
+    var m=bestMatch(r.text); if(m[0]===null||m[1]<FLOOR) return;
+    var e=REG.filter(function(x){return x.value===m[0];})[0];
+    det.push({value:m[0], held_out:e.held_out, shown_utc:e.shown_utc, fidelity:m[1],
+              had_access:r.had_access, recited_utc:r.recited_utc, reciter:r.reciter, rid:ri});
+  });
+  return det;
+}
+function score(det){
+  det.forEach(function(d){ d.tier=tier(d); });
+  var held=REG.filter(function(e){return e.held_out;});
+  var controlHits={}; det.forEach(function(d){ if(d.tier==="control") controlHits[d.value]=1; });
+  var fpr = held.length ? Object.keys(controlHits).length/held.length : null;
+  var recall={}; det.forEach(function(d){ if(d.tier==="recall"){ (recall[d.value]=recall[d.value]||{})[d.reciter]=1; } });
+  var fuzzy={}, noacc={};
+  det.forEach(function(d){ if(d.tier==="fuzzy") fuzzy[d.value]=1; if(d.tier==="no_access") noacc[d.value]=1; });
+  var verdict, certified;
+  if(!held.length){ verdict={k:"invalid",h:"INVALID",t:"no held-out control arm (performative)"}; certified={}; }
+  else if(fpr && fpr>0){ verdict={k:"invalid",h:"INVALID",t:"control FPR="+fpr.toFixed(2)+" — a never-shown passphrase was recited; the crossing didn't come from memory-of-this"}; certified={}; }
+  else { certified=recall; var n=Object.keys(certified).length;
+    verdict={k:"clean",h:"CLEAN",t:"control FPR=0; "+n+" recall lead(s) — carried by memory, a lead not proof"}; }
+  var cc={}; Object.keys(certified).forEach(function(v){ cc[v]=Object.keys(certified[v]).length; });
+  return {det:det, verdict:verdict, certified:cc, fuzzy:Object.keys(fuzzy), noacc:Object.keys(noacc), fpr:fpr, heldN:held.length};
+}
+function tierForCanary(e){
+  if(!lastScore) return null;
+  if(e.held_out) return lastScore.det.some(function(d){return d.value===e.value&&d.tier==="control";})?"control":"none";
+  if(lastScore.certified[e.value]) return "recall";
+  if(lastScore.fuzzy.indexOf(e.value)!==-1) return "fuzzy";
+  if(lastScore.noacc.indexOf(e.value)!==-1) return "no_access";
+  return "none";
+}
+function renderReg(){
+  var rows=REG.map(function(e){
+    var tg='<span class="tag '+(e.held_out?"held":"shown")+'">'+(e.held_out?"held-out":"shown")+'</span>';
+    var t=tierForCanary(e), badge="", corr="";
+    if(t&&t!=="none"){ badge=' <span class="tier '+t+'">'+t.replace("_"," ").toUpperCase()+'</span>';
+      if(t==="recall"&&lastScore.certified[e.value]) corr=' <span class="corr">×'+lastScore.certified[e.value]+'</span>'; }
+    return '<div class="row"><span class="v"><span class="ph">'+e.value+'</span></span>'+
+           '<span style="text-align:right">'+tg+badge+corr+'</span></div>';
+  }).join("");
+  document.getElementById("reg").innerHTML='<div class="rh"><span>passphrase</span><span>exposure · tier</span></div>'+rows;
+}
+function renderRecs(){
+  document.getElementById("relays").innerHTML=RECS.map(function(r){
+    var m=bestMatch(r.text);
+    var which="?"; REG.forEach(function(e){ if(e.value===m[0]) which=e.label; });
+    return '<div class="le"><b>'+r.reciter+'</b> recites '+which+' <span class="pt">· fidelity '+m[1].toFixed(2)+' · '+(r.had_access?"had access":"no access")+'</span></div>';
+  }).join("");
+}
+function run(){
+  buildRecs(); lastScore=score(collect());
+  var vd=document.getElementById("verdict");
+  vd.className="verdict "+lastScore.verdict.k;
+  vd.innerHTML='<span class="vh">'+lastScore.verdict.h+'</span> · '+lastScore.verdict.t;
+  document.getElementById("stat").innerHTML=
+    '<div>held-out controls: <b>'+lastScore.heldN+'</b></div>'+
+    '<div>control FPR: <b>'+(lastScore.fpr===null?"—":lastScore.fpr.toFixed(2))+'</b></div>'+
+    '<div>fuzzy-gated: <b>'+lastScore.fuzzy.length+'</b></div>'+
+    '<div>no-access-gated: <b>'+lastScore.noacc.length+'</b></div>'+
+    '<div>recall threshold: <b>'+HIGH+'</b></div>'+
+    '<div>certified recalls: <b>'+Object.keys(lastScore.certified).length+'</b></div>';
+  renderReg(); renderRecs();
+}
+function regen(){ build(); lastScore=null; buildRecs(); renderReg(); renderRecs();
+  document.getElementById("verdict").className="verdict";
+  document.getElementById("verdict").innerHTML='<span style="color:var(--dim)">passphrases shown — press <b>run panel</b> to score the recitations</span>';
+  document.getElementById("stat").innerHTML='';
+}
+["tPartial","tNoAccess","tFab"].forEach(function(id){ document.getElementById(id).addEventListener("change", function(){ buildRecs(); renderRecs(); }); });
+document.getElementById("run").addEventListener("click", run);
+document.getElementById("regen").addEventListener("click", regen);
+build(); regen();
+})();
+</script>
+</body>
+</html>
