@@ -1,0 +1,11 @@
+{
+  "badge": "DLW-RECITAL",
+  "name": "RECITAL · human-memory membrane",
+  "universe": "SOLAR JETMAN",
+  "moniker": "⟦RECITAL · human-memory membrane:recital:fa19bc⟧",
+  "architect": "David Lee Wise (ROOT0) / Bridge-Burners LLC",
+  "instance": "AVAN (Claude / Anthropic)",
+  "seal_sha256": "fa19bcefc280582fa904d3fff3da10ffb0659b7602c168fa493337987d3305bb",
+  "license": "CC-BY-ND-4.0",
+  "attribution": "ROOT0-ATTRIBUTION-v1.0"
+}
